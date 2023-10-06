@@ -59,7 +59,7 @@ class _TaskAddPageState extends BaseStateWidget<TaskAddPage> {
                           controller: taskNameController,
                         ))),
                     CardItemWidget(
-                        S.of(context).language_setting,
+                        S.of(context).package_platform,
                         Expanded(
 
                             ///通过Selector来进行部分刷新，后面一个参数表示比较的数据

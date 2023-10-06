@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:flutter_web_auto_package/base/base_state_widget.dart';
-import 'package:flutter_web_auto_package/common/dialog/common_error_dialog.dart';
-import 'package:flutter_web_auto_package/common/dialog/common_input_dialog.dart';
+import 'package:flutter_web_auto_package/common/dialog/common_dialog.dart';
 import 'package:flutter_web_auto_package/common/widget/common_toast.dart';
 import 'package:flutter_web_auto_package/generated/l10n.dart';
 import 'package:flutter_web_auto_package/model/config_save_model.dart';
@@ -285,7 +284,7 @@ class _DefaultSettingsPageState extends BaseStateWidget<DefaultSettingsPage> {
     }
     widgetList.add(IconButton(
       onPressed: () {
-        showInputDialog(
+        CommonDialog.showInputDialog(
           label: S.of(context).environment,
           onConfirm: (value) {
             defaultSettingsChangeNotifier.environConfig.add(value.toString());
@@ -322,7 +321,7 @@ class _DefaultSettingsPageState extends BaseStateWidget<DefaultSettingsPage> {
     }
     widgetList.add(IconButton(
       onPressed: () {
-        showInputDialog(
+        CommonDialog.showInputDialog(
           label: S.of(context).flavor,
           onConfirm: (value) {
             defaultSettingsChangeNotifier.flavorConfig.add(value.toString());
@@ -376,7 +375,7 @@ class _DefaultSettingsPageState extends BaseStateWidget<DefaultSettingsPage> {
           }
         }, onFail: (p0) {
           if (mounted) {
-            showErrorDialog(message: p0 ?? '');
+            CommonDialog.showErrorDialog(message: p0 ?? '');
           }
         });
       },
